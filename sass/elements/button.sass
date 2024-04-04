@@ -123,7 +123,10 @@ $button-static-border-color: $grey-lighter !default
       color: $color-invert
       &:hover,
       &.is-hovered
-        background-color: darken($color, 2.5%)
+        @if $color == 'var(--color-primary-500)'
+          color: var(--color-primary-600) !important
+        @if $color != 'var(--color-primary-500)'
+          background-color: darken($color, 2.5%)
         border-color: transparent
         color: $color-invert
       &:focus,
