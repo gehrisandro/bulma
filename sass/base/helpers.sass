@@ -101,7 +101,10 @@ $alignments: ('centered': 'center', 'justified': 'justify', 'left': 'left', 'rig
   a.has-text-#{$name}
     &:hover,
     &:focus
-      color: darken($color, 10%) !important
+      @if $color == 'var(--color-primary-500)'
+        color: var(--color-primary-700) !important
+      @if $color != 'var(--color-primary-500)'
+        color: darken($color, 10%) !important
   .has-background-#{$name}
     background-color: $color !important
 
